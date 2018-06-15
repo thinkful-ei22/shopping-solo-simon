@@ -1,0 +1,1 @@
+Extend shopping list app SOLO;
