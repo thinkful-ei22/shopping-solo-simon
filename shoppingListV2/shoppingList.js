@@ -106,6 +106,38 @@ const handleDeleteItemClicked = function() {
 };
 
 
+/* --HIDE&UNHIDE CHECKED-- */
+
+
+// Returns and inserts HTML elemnts to create hide button;
+const generateHideUnhideButton = function() {
+};
+
+// On button hide click, hide checked items. Click again to unhide;
+const handleHideClicked = function() {
+};
+
+
+/* --FILTER BY SUBMIT-- */ // CSS:hidden
+
+
+// When words are typed into search bar, displayed list will filter if they contain typed sequence;
+const displaySearchItems = function() {
+};
+
+
+/* --EDIT-- */ // update generateItemElement with new button, prompt();
+
+
+// Returns and inserts HTML elemnts to create edit button;
+const generateEditButton = function() {
+};
+
+// On button edit click, get input form prompt window, then change item text at index and render;
+const handleEditClicked = function() {
+};
+
+
 /* --CALLS-- */
 
 
