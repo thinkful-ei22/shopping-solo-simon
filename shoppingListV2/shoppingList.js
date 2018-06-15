@@ -14,8 +14,17 @@ const STORE = [
   {name: 'bread', checked: false}
 ];
 
+// Returns and inserts HTML elemnts to create hide button;
+const generateHideUnhideButton = function() {
+  const hideButtonHtml = `
+  <div class="js-hide-button-container">
+    <button class="js-hide">Hide Checked</button>
+  </div>`;
+  $('.container').append(hideButtonHtml);
+};
+
 // Returns our <li> elements;
-const generateItemElement = function(item, itemIndex, template) {
+const generateItemElement = function(item, itemIndex) {
   return `
     <li class="js-item-index-element" data-item-index="${itemIndex}">
       <span class="shopping-item js-shopping-item ${item.checked ? 'shopping-item__checked' : ''}">${item.name}</span>
@@ -131,10 +140,6 @@ const handleEditClicked = function() {
 /* --HIDE&UNHIDE CHECKED-- */
 
 
-// Returns and inserts HTML elemnts to create hide button;
-const generateHideUnhideButton = function() {
-};
-
 // On button hide click, hide checked items. Click again to unhide;
 const handleHideClicked = function() {
 };
@@ -153,6 +158,7 @@ const displaySearchItems = function() {
 
 const handleShoppingList = function() {
   renderShoppingList();
+  generateHideUnhideButton();
   handleNewItemSubmit();
   handleItemCheckClicked();
   handleDeleteItemClicked();
