@@ -16,11 +16,8 @@ const STORE = [
 
 // Returns and inserts HTML elemnts to create hide button;
 const generateHideUnhideButton = function() {
-  const hideButtonHtml = `
-  <div class="js-hide-button-container">
-    <button class="js-hide">Hide Checked</button>
-  </div>`;
-  $('.container').append(hideButtonHtml);
+  const hideButtonHtml = '<button class="js-hide">Hide Checked</button>';
+  $('.js-hide-button-container').html(hideButtonHtml);
 };
 
 // Returns our <li> elements;
