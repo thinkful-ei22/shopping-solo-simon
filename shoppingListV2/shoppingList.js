@@ -109,6 +109,25 @@ const handleDeleteItemClicked = function() {
 };
 
 
+/* --EDIT ITEM-- */ 
+
+
+//Edits <li> element at index;
+const editItem = function(itemIndex, promptText) {
+  STORE[itemIndex].name = promptText;
+};
+
+// On button edit click, get input from prompt window, then change item text at index and render;
+const handleEditClicked = function() {
+  $('.js-shopping-list').on('click', '.js-item-edit', event => {
+    const itemIndex = getItemIndexFromElement(event.currentTarget);
+    const promptText = prompt('Edit item text:');
+    editItem(itemIndex, promptText);
+    renderShoppingList();
+  });
+};
+
+
 /* --HIDE&UNHIDE CHECKED-- */
 
 
@@ -126,25 +145,6 @@ const handleHideClicked = function() {
 
 // When words are typed into search bar, displayed list will filter if they contain typed sequence;
 const displaySearchItems = function() {
-};
-
-
-/* --EDIT ITEM-- */ 
-
-
-//Edits <li> element at index;
-const editItem = function(itemIndex, promptText) {
-  STORE[itemIndex].name = promptText;
-};
-
-// On button edit click, get input from prompt window, then change item text at index and render;
-const handleEditClicked = function() {
-  $('.js-shopping-list').on('click', '.js-item-edit', event => {
-    const itemIndex = getItemIndexFromElement(event.currentTarget);
-    const promptText = prompt('Edit item text:');
-    editItem(itemIndex, promptText);
-    renderShoppingList();
-  });
 };
 
 
