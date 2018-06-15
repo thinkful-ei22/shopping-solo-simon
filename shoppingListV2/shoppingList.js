@@ -1,4 +1,5 @@
 'use strict';
+/*eslint-env jquery*/
 
 const STORE = [
   {name: 'apples', checked: false},

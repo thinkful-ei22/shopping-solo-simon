@@ -15,3 +15,4 @@ Function stubs usually contain pseudocode which describes what the function will
 Created values in our STORE variable. The values inputted here will be the default values shown after running our program. 
 
 Store represent the current status of our DOM.
+*/
