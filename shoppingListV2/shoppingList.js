@@ -129,11 +129,22 @@ const displaySearchItems = function() {
 };
 
 
-/* --EDIT-- */ // prompt();
+/* --EDIT ITEM-- */ 
 
 
-// On button edit click, get input form prompt window, then change item text at index and render;
+//Edits <li> element at index;
+const editItem = function(itemIndex, promptText) {
+  STORE[itemIndex].name = promptText;
+};
+
+// On button edit click, get input from prompt window, then change item text at index and render;
 const handleEditClicked = function() {
+  $('.js-shopping-list').on('click', '.js-item-edit', event => {
+    const itemIndex = getItemIndexFromElement(event.currentTarget);
+    const promptText = prompt('Edit item text:');
+    editItem(itemIndex, promptText);
+    renderShoppingList();
+  });
 };
 
 
@@ -145,6 +156,7 @@ const handleShoppingList = function() {
   handleNewItemSubmit();
   handleItemCheckClicked();
   handleDeleteItemClicked();
+  handleEditClicked();
 };
 
 $(handleShoppingList());
