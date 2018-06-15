@@ -26,6 +26,9 @@ const generateItemElement = function(item, itemIndex, template) {
         <button class="shopping-item-delete js-item-delete">
             <span class="button-label">delete</span>
         </button>
+        <button class="shopping-item-edit js-item-edit">
+            <span class="button-label">edit</span>
+        </button>
       </div>
     </li>`;
 };
@@ -126,12 +129,8 @@ const displaySearchItems = function() {
 };
 
 
-/* --EDIT-- */ // update generateItemElement with new button, prompt();
+/* --EDIT-- */ // prompt();
 
-
-// Returns and inserts HTML elemnts to create edit button;
-const generateEditButton = function() {
-};
 
 // On button edit click, get input form prompt window, then change item text at index and render;
 const handleEditClicked = function() {
