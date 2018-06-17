@@ -137,13 +137,15 @@ const handleEditClicked = function() {
 /* --HIDE&UNHIDE CHECKED-- */
 
 
-const handleHideClicked = function() {
-  $('.js-hide').click(function() {
-    $('.shopping-item__checked').toggle();
+// On button hide click, if check is active, hide all checked elements;
+const handleHideClicked = function () {
+  $('.js-hide').click(function () {
+    $('li').each(function () {
+      if ($(this).find('span').hasClass('shopping-item__checked'))
+        $(this).toggle();
+    });
   });
 };
-
-// '.js-item-index-element'
 
 /* --FILTER BY SUBMIT-- */ // CSS:hidden
 
