@@ -150,11 +150,12 @@ const handleHideClicked = function () {
 // On button hide click, if hide is clicked, button text changes to Unhide, and vice-versa;
 const changeHideText = function() {
   $('.js-hide').click(function () {
-    $(this).text(function(i, text) {
+    $(this).text(function(index, text) {
       return text === 'Hide Checked' ? 'Unhide Checked' : 'Hide Checked';
     });
   });
 };
+
 
 /* --FILTER BY SUBMIT-- */ // CSS:hidden
 
