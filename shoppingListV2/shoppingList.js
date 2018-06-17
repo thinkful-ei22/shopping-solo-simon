@@ -15,7 +15,7 @@ const STORE = [
 ];
 
 // Returns and inserts HTML elemnts to create hide button;
-const generateHideUnhideButton = function() {
+const createHideUnhideButton = function() {
   const hideButtonHtml = '<button class="js-hide">Hide Checked</button>';
   $('.js-hide-button-container').html(hideButtonHtml);
 };
@@ -137,10 +137,13 @@ const handleEditClicked = function() {
 /* --HIDE&UNHIDE CHECKED-- */
 
 
-// On button hide click, hide checked items. Click again to unhide;
 const handleHideClicked = function() {
+  $('.js-hide').click(function() {
+    $('.shopping-item__checked').toggle();
+  });
 };
 
+// '.js-item-index-element'
 
 /* --FILTER BY SUBMIT-- */ // CSS:hidden
 
@@ -155,11 +158,14 @@ const displaySearchItems = function() {
 
 const handleShoppingList = function() {
   renderShoppingList();
-  generateHideUnhideButton();
+  createHideUnhideButton();
   handleNewItemSubmit();
   handleItemCheckClicked();
   handleDeleteItemClicked();
   handleEditClicked();
+  handleHideClicked();
 };
 
 $(handleShoppingList());
+
+
