@@ -138,9 +138,9 @@ const handleEditClicked = function() {
 
 
 // On button hide click, if check is active, hide all checked elements;
-const handleHideClicked = function () {
-  $('.js-hide').click(function () {
-    $('li').each(function () {
+const handleHideClicked = function() {
+  $('.js-hide').click(function() {
+    $('li').each(function() {
       if ($(this).find('span').hasClass('shopping-item__checked'))
         $(this).toggle();
     });
@@ -149,7 +149,7 @@ const handleHideClicked = function () {
 
 // On button hide click, if hide is clicked, button text changes to Unhide, and vice-versa;
 const changeHideText = function() {
-  $('.js-hide').click(function () {
+  $('.js-hide').click(function() {
     $(this).text(function(index, text) {
       return text === 'Hide Checked' ? 'Unhide Checked' : 'Hide Checked';
     });
@@ -162,6 +162,17 @@ const changeHideText = function() {
 
 // When words are typed into search bar, displayed list will filter if they contain typed sequence;
 const displaySearchItems = function() {
+  $('.js-shopping-list-entry').change(function() {
+    const newItemName = $('.js-shopping-list-entry').val();
+    if (newItemName) {
+      $('.js-item-index-element').find('.js-shopping-item:not(:contains(' + newItemName + '))').parent().slideUp();
+      $('.js-item-index-element').find('.js-shopping-item:contains(' + newItemName + ')').parent().slideDown();
+    } else {
+      $('.js-item-index-element').closest('li').slideDown();
+    }
+  }).keyup(function() {
+    $(this).change();
+  });
 };
 
 
@@ -177,6 +188,7 @@ const handleShoppingList = function() {
   handleEditClicked();
   handleHideClicked();
   changeHideText();
+  displaySearchItems();
 };
 
 $(handleShoppingList());
